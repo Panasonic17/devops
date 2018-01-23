@@ -12,7 +12,22 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "base"
+    
+  config.vm.define "first" do |first|
+    first.vm.box = "bento/ubuntu-16.04"
+    first.vm.provision "shell", path: "vm_provision/provision-ubuntu-16.04.sh"
+    first.vm.provision "shell", path: "vm_provision/provision-first-ubuntu-16.04.sh"
+  end
+
+  config.vm.define "second" do |second|
+    second.vm.box = "bento/ubuntu-16.04"
+    second.vm.provision "shell", path: "vm_provision/provision-ubuntu-16.04.sh"
+  end
+    
+  config.vm.define "third" do |third|
+    third.vm.box = "bento/ubuntu-16.04"
+    third.vm.provision "shell", path: "vm_provision/provision-ubuntu-16.04.sh"
+  end
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
