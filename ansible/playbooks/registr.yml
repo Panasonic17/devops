@@ -1,0 +1,10 @@
+---
+- hosts: all
+  sudo: yes
+  tasks:
+  - name: "ls"
+    shell : cat /testFile1.txt
+    register: lsVAL
+  - name: print
+    debug: msg="The variable is {{ lsVAL }}"
+      

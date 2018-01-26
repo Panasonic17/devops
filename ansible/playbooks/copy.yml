@@ -1,0 +1,17 @@
+---
+- hosts: all
+  sudo: yes
+  tasks:
+  - name: "Copy FILE"
+    copy:
+      src: "{{ item.src }}"
+      dest: "{{ item.dest }}"
+    with_items:
+     - {
+     src: "/vagrant/testFile1.txt",
+     dest: "/testFile1.txt"
+     }
+     - {
+     src: "/vagrant/testFile2.txt",
+     dest: "/testFile2.txt"
+     }
