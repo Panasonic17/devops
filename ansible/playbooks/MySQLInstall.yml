@@ -1,0 +1,5 @@
+---
+- hosts: second
+  sudo: yes
+  roles:
+  - mysql
