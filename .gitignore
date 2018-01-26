@@ -1,0 +1,12 @@
+.vagrant/*
+.vagrant/machines/*
+machines/*
+/.vagrant/*
+/.vagrant/machines/*
+/machines/*
+.vagrant/
+.vagrant/machines/
+machines/
+/.vagrant
+/.vagrant/machines
+/machines
