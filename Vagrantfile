@@ -17,19 +17,19 @@ Vagrant.configure("2") do |config|
     first.vm.box = "bento/ubuntu-16.04"
     first.vm.provision "shell", path: "vm_provision/provision-ubuntu-16.04.sh"
     first.vm.provision "shell", path: "vm_provision/provision-first-ubuntu-16.04.sh"
-    first.vm.network "private_network", ip: "192.168.50.1"
+    #first.vm.network "private_network", ip: "192.168.50.1"
   end
 
   config.vm.define "second" do |second|
     second.vm.box = "bento/ubuntu-16.04"
     second.vm.provision "shell", path: "vm_provision/provision-ubuntu-16.04.sh"
-    second.vm.network "private_network", ip: "192.168.50.2"
+   # second.vm.network "private_network", ip: "192.168.50.2"
   end
     
   config.vm.define "third" do |third|
     third.vm.box = "bento/ubuntu-16.04"
     third.vm.provision "shell", path: "vm_provision/provision-ubuntu-16.04.sh"
-    third.vm.network "private_network", ip: "192.168.50.3"
+    #third.vm.network "private_network", ip: "192.168.50.3"
   end
 
   # Disable automatic box update checking. If you disable this, then
