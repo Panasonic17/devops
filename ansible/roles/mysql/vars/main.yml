@@ -1,0 +1,4 @@
+---
+users:
+ - {login: zabbix, pass: zabbix, priv: '*.*:ALL'}
+ - {login: test, pass: test, priv: '*.*:ALL'}

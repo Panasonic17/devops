@@ -10,7 +10,25 @@
   service: name=mysql state=started enabled=yes
 
 - name: Create Application Database
-  mysql_db: name=test state=present
+  mysql_db: name=test1 state=present
+  
+- name: Create Application Database
+  mysql_db: name=test2 state=present
 
 - name: Create Database User
-  mysql_user: name=root password=root priv='*.*:ALL' state=present
+  mysql_user: name={{ item.login }}  password={{ item.pass }} priv={{ item.priv }} state=present
+  with_items:
+    - "{{ users }}"
+    
+- name: configurating
+  copy:
+    src: mysql.cnf
+    dest: /etc/mysql/mysql.cnf
+  notify: 
+   - restart mysql
+  
+
+
+
+
+  
