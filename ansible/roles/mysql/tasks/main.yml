@@ -19,13 +19,7 @@
   mysql_user: name={{ item.login }}  password={{ item.pass }} priv={{ item.priv }} state=present
   with_items:
     - "{{ users }}"
-    
-- name: configurating
-  copy:
-    src: mysql.cnf
-    dest: /etc/mysql/mysql.cnf
-  notify: 
-   - restart mysql
+
   
 
 
