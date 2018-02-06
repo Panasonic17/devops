@@ -18,6 +18,7 @@ Vagrant.configure("2") do |config|
     first.vm.provision "shell", path: "vm_provision/provision.sh"
     first.vm.provision "shell", path: "vm_provision/provision-first.sh"
     first.vm.network "private_network", ip: "192.168.50.1"
+    first.vm.network :forwarded_port, guest: 8080, host: 8080
   end
 
   config.vm.define "second" do |second|
