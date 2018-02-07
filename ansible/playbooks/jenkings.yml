@@ -1,5 +1,5 @@
 ---
-- hosts: first
+- hosts: second
   sudo: yes
   roles:
   - jenkins
